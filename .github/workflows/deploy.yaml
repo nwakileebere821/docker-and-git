@@ -1,0 +1,17 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - cicd
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run a Linux command
+        run: ls -la
+
