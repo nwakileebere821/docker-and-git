@@ -8,27 +8,13 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run a Linux command
+      - name: List files
         run: ls -la
 
-name: Deploy to EC2
-
-on:
-  push:
-    branches:
-      - cicd
-
-jobs:
-  deploy2:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run a Linux command
+      - name: Show index file
         run: cat index.html
