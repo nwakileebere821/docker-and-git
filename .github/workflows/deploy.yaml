@@ -1,4 +1,4 @@
-name: Deploy to EC2
+name: Parallel Pipeline
 
 on:
   push:
@@ -6,15 +6,16 @@ on:
       - cicd
 
 jobs:
-  deploy:
+  job1:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: List files
         run: ls -la
 
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
       - name: Show index file
         run: cat index.html
