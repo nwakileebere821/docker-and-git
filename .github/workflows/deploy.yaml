@@ -15,3 +15,11 @@ jobs:
       - name: Run a Linux command
         run: ls -la
 
+deploy 2
+   runs-on: ubuntu latest
+    steps:
+      - name:checkout
+       uses:actions/chechout@v2
+
+      - name: run a liux command
+        run: cat index.html
